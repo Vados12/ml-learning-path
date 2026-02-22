@@ -1,7 +1,6 @@
 import numpy as np
-from numpy.random import rand
 
-random_mark = np.random.randint(1, 6, size=(4, 5))
+random_mark = np.random.randint(2, 6, size=(5, 4))
 
 
 print("Оценки:\n", random_mark)
