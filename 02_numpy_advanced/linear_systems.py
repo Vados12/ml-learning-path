@@ -5,9 +5,15 @@ import numpy as np
 # -2x + y +2z = -3
 
 A = np.array([[2, -3, -2], [1, -1, 1], [-1, 2, 2]])
-print("Матрица A:\n", A)
+AT = A.T
+print("Матрица A:\n", AT)
 B = np.array([8, -11, -3])
 print("Матрица B:\n", B)
 
-x = np.linalg.solve(A, B)
-print("x = ", x)
+x = np.linalg.solve(AT, B)
+
+Examination = AT @ x
+if np.allclose(Examination, B):
+    print("Ответ: ", x)
+else:
+    print("Error")
