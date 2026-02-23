@@ -17,3 +17,10 @@ if np.allclose(Examination, B):
     print("Ответ: ", x)
 else:
     print("Error")
+
+
+eigenvalues, eigenvectors = np.linalg.eig(AT)
+detA = np.linalg.det(AT)
+print("Детерминант матрицы A: \n", detA)
+print("Собственные числа: \n",eigenvalues)
+print("Собственные векторы: \n",eigenvectors)
