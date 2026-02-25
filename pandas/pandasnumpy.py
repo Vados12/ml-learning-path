@@ -50,8 +50,37 @@ df_mean = pd.DataFrame(
         "English_mean_value": [mean_value_english],
     })
 print(df_mean)
-    
 
+print("-------------------------------------------------------")
+
+math_four = df.loc[df["Math"] >= 4]
+name = math_four[["Names"]]  
+print(name)
     
+print("-------------------------------------------------------")
+
+print("-------------------------------------------------------")
+
+df["Average"] = (df["Math"] + df["Physic"] + df["English"])/3
+df["Average"] = df["Average"].round(2)
+print(df)
+
+print("-------------------------------------------------------")
+
+good = df.loc[df["Average"] >= 4.5]
+if good.empty:
+    print("Not find")
+else:
+    name2 = good[["Names"]]  
+    print(name2)
+
+
+print("-------------------------------------------------------")
+
+df_sort = df.sort_values(by="Average", ascending=False)
+print(df_sort)
+
+df.to_csv("results.csv", index=False, encoding='utf-8-sig')
+
 
 
